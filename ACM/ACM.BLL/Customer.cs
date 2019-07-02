@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BLL
 {
+    //Entity class
     public class Customer//Private by default added public to make it public
     {
 
@@ -15,8 +16,8 @@ namespace ACM.BLL
         public string EmailAddress { get; set; }
 
 
-        //Backing field for Last name: NEede because the public property can be setted so we need to hold data somewhere.
-        private string _lastName;//encapsulate by maiking it private. Requires public accesors to make it public available.
+        //Backing field for Last name: Needed because the public property can be setted so we need to hold data somewhere.
+        private string _lastName;//encapsulate (hide data) by maiking it private. Requires public accesors to make it public available.
 
         //C# Property
         public string LastName// If only avaiable for code inside project, use internal string LastName{}.
