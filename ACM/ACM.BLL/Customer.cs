@@ -40,12 +40,25 @@ namespace ACM.BLL
         public string FirstName { get; set; }
 
         //Creating compund property
-        public string FullName
+        public string FullName//no setter because no other code modify this property.
         {
             get
             {
-                return LastName + "," + FirstName;
+                string fullName = LastName;
+                if (!string.IsNullOrWhiteSpace(FirstName))
+                {
+                    if (!string.IsNullOrWhiteSpace(fullName))
+                        {
+                            fullName += ", ";
+                        }
+
+                    fullName += FirstName;
+                }
+                return fullName;
             }
         }
+
+        //Creating a static: Bellons to the class rather than a specific instance. Callable with the ClassName.staticPropertyName
+        public static int InstanceCounter { get; set; }
     }
 }
