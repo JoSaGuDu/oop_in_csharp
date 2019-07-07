@@ -60,5 +60,23 @@ namespace ACM.BLL
 
         //Creating a static: Bellons to the class rather than a specific instance. Callable with the ClassName.staticPropertyName
         public static int InstanceCounter { get; set; }
+
+        //Methods
+
+        ///<summary>
+        ///Validates costumer data
+        ///</summary>
+        ///<returns></returns>
+        public bool Validate()
+        {
+            var isValid = true;
+
+            if (string.IsNullOrWhiteSpace(FirstName)) isValid = false;
+            if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
+            return isValid;
+        }
     }
+
+    
 }
+
