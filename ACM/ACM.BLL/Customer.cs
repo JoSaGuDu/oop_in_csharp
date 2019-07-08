@@ -75,6 +75,36 @@ namespace ACM.BLL
             if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
             return isValid;
         }
+
+        ///<summary>
+        ///Retrieve informations for a specific customer
+        ///</summary>
+        ///<returns></returns>
+        public Customer Retrieve(int costumerId)
+        {
+            
+            return new Customer();
+        }
+
+        ///<summary>
+        ///Overload the Retrieve method for retreive informations for multiple customers
+        ///</summary>
+        ///<returns></returns>
+        public List<Customer> Retrieve()//Same nakme diferent signature.
+        {
+
+            return new List<Customer>();
+        }
+
+        ///<summary>
+        ///Save or add a new customer to the DB
+        ///</summary>
+        ///<returns></returns>
+        public bool Save()
+        {
+
+            return true;
+        }
     }
 
     
