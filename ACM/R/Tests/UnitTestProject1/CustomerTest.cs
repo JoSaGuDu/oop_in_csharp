@@ -112,6 +112,121 @@ namespace ACM.BLL.Test
             Assert.AreEqual(expectedValue, actualValue);
         }
 
+        [TestMethod]//This must be added in order to the test be recognized.
+        public void methodTestValidateValid()
+        {
+            //--Arrange: 
+            //1.Instatiation of the class to be tested
+            Customer testCustomer = new Customer
+            {
+                //2.Set properties values if needed
+                FirstName = "Tester",
+                LastName = "Thetester",
+                EmailAddress = "myaddress@email.com"
+            };
+
+            //3. Set the expected outcome
+            bool expectedValue = true;
+
+            //--Act: Perform the test operations
+            bool actualValue = testCustomer.Validate();
+
+            //--Assert: Teste the outcome
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+        [TestMethod]
+        public void methodValidateTestValidNoFirstName()
+        {
+            //--Arrange: 
+            //1.Instatiation of the class to be tested
+            Customer testCustomer = new Customer
+            {
+                //2.Set properties values if needed
+                FirstName = "",
+                LastName = "TheTester",
+                EmailAddress = "myaddress@email.com"
+            };
+
+            //3. Set the expected outcome
+            bool expectedValue = true;
+
+            //--Act: Perform the test operations
+            bool actualValue = testCustomer.Validate();
+
+            //--Assert: Teste the outcome
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+        [TestMethod]
+        public void methodValidateTestValidNoLastName()
+        {
+            //--Arrange: 
+            //1.Instatiation of the class to be tested
+            Customer testCustomer = new Customer
+            {
+                //2.Set properties values if needed
+                FirstName = "Tester",
+                LastName = "",
+                EmailAddress = "myaddress@email.com"
+            };
+
+            //3. Set the expected outcome
+            bool expectedValue = true;
+
+            //--Act: Perform the test operations
+            bool actualValue = testCustomer.Validate();
+
+            //--Assert: Teste the outcome
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+        [TestMethod]
+        public void methodValidateTestInvalidName()
+        {
+            //--Arrange: 
+            //1.Instatiation of the class to be tested
+            Customer testCustomer = new Customer
+            {
+                //2.Set properties values if needed
+                FirstName = "",
+                LastName = "",
+                EmailAddress = "myaddress@email.com"
+            };
+
+            //3. Set the expected outcome
+            bool expectedValue = false;
+
+            //--Act: Perform the test operations
+            bool actualValue = testCustomer.Validate();
+
+            //--Assert: Teste the outcome
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+        [TestMethod]
+        public void methodValidateTestInvalidEmail()
+        {
+            //--Arrange: 
+            //1.Instatiation of the class to be tested
+            Customer testCustomer = new Customer
+            {
+                //2.Set properties values if needed
+                FirstName = "Tester",
+                LastName = "TheTester",
+                EmailAddress = ""
+            };
+
+            //3. Set the expected outcome
+            bool expectedValue = false;
+
+            //--Act: Perform the test operations
+            bool actualValue = testCustomer.Validate();
+
+            //--Assert: Teste the outcome
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
 
     }
 }
