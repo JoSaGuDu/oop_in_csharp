@@ -68,7 +68,7 @@ namespace ACM.BLL
             }
         }
 
-        //Creating a static: Bellons to the class rather than a specific instance. Callable with the ClassName.staticPropertyName
+        //Creating a static: Bellongs to the class rather than a specific instance. Callable with the ClassName.staticPropertyName
         public static int InstanceCounter { get; set; }
 
         //Methods
