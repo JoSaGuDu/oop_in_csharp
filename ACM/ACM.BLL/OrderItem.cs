@@ -6,28 +6,26 @@ using System.Threading.Tasks;
 
 namespace ACM.BLL
 {
-    class Product
+    class OrderItem
     {
-        //ProductID
-        public int ProductId {get; private set;}
-        //Product name
-        public string ProductName { get; set; }
-        //Description
-        public string ProductDescription { get; set; }
 
-        //Current price. Defined as a nullable type by using ?
-        public decimal? CurrentPrice { get; set; }
+        public int OrderItemId { get; private set; }
+        public int ProductId { get; set; }
+        public decimal? PurchasePrice { get; set; }
+        public int Quantity { get; set; }
+        
 
         //Constructor
-        public Product()
+        public OrderItem()
         {
 
         }
 
-        public Product(int productId, string productName)
+        public OrderItem(int orderItemId, int productId, decimal purchasePrice)
         {
+            OrderItemId = orderItemId;
             ProductId = productId;
-            ProductName = productName;
+            PurchasePrice = purchasePrice;
         }
 
         //Methods
@@ -41,8 +39,7 @@ namespace ACM.BLL
         {
             var isValid = true;
 
-            if (string.IsNullOrWhiteSpace(ProductName) && string.IsNullOrEmpty(ProductDescription)) isValid = false;
-            if (CurrentPrice == null) isValid = false;
+            if (PurchasePrice == null) isValid = false;
             return isValid;
         }
 
@@ -50,13 +47,13 @@ namespace ACM.BLL
         ///Retrieve informations for a specific product
         ///</summary>
         ///<returns></returns>
-        public Product Retrieve(int productId)
+        public OrderItem Retrieve(int orderItemId)
         {
-            return new Product();
+            return new OrderItem();
         }
-        public List<Product> Retrieve()
+        public List<OrderItem> Retrieve()
         {
-            return new List<Product>();
+            return new List<OrderItem>();
         }
 
         ///<summary>

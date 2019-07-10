@@ -6,43 +6,45 @@ using System.Threading.Tasks;
 
 namespace ACM.BLL
 {
-    class Product
+    class Order
     {
-        //ProductID
-        public int ProductId {get; private set;}
-        //Product name
-        public string ProductName { get; set; }
-        //Description
-        public string ProductDescription { get; set; }
 
-        //Current price. Defined as a nullable type by using ?
+        public int OrderId { get; private set; }
+
+        public string Customer { get; set; }
+    
+        public DateTimeOffset? OrderDate { get; set; }
+
+        public List<Product> OrderItems { get; set; }
+       
         public decimal? CurrentPrice { get; set; }
 
         //Constructor
-        public Product()
+        public Order()
         {
 
         }
 
-        public Product(int productId, string productName)
+        public Order(int ordetId)
         {
-            ProductId = productId;
-            ProductName = productName;
+
+            OrderId = ordetId;
+
         }
 
         //Methods
 
 
         ///<summary>
-        ///Validates product info
+        ///Validates order info
         ///</summary>
         ///<returns></returns>
         public bool Validate()
         {
             var isValid = true;
 
-            if (string.IsNullOrWhiteSpace(ProductName) && string.IsNullOrEmpty(ProductDescription)) isValid = false;
-            if (CurrentPrice == null) isValid = false;
+            if (string.IsNullOrWhiteSpace(Customer)) isValid = false;
+            if (OrderDate == null) isValid = false;
             return isValid;
         }
 
@@ -50,13 +52,13 @@ namespace ACM.BLL
         ///Retrieve informations for a specific product
         ///</summary>
         ///<returns></returns>
-        public Product Retrieve(int productId)
+        public Order Retrieve(int orderID)
         {
-            return new Product();
+            return new Order();
         }
-        public List<Product> Retrieve()
+        public List<Order> Retrieve()
         {
-            return new List<Product>();
+            return new List<Order>();
         }
 
         ///<summary>
@@ -68,6 +70,5 @@ namespace ACM.BLL
 
             return true;
         }
-
     }
 }
