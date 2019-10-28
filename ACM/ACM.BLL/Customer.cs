@@ -86,35 +86,36 @@ namespace ACM.BLL
             return isValid;
         }
 
-        ///<summary>
-        ///Retrieve informations for a specific customer
-        ///</summary>
-        ///<returns></returns>
-        public Customer Retrieve(int costumerId)
-        {
-            
-            return new Customer();
-        }
+        //MOVED TO THE REPOSITORY WHO IS THE RESPONSIBLE TO ACCESS DATA
+                ///<summary>
+                ///Retrieve informations for a specific customer
+                ///</summary>
+                ///<returns></returns>
+                //public Customer Retrieve(int costumerId)
+                //{
 
-        ///<summary>
-        ///Overload the Retrieve method for retreive informations for multiple customers
-        ///</summary>
-        ///<returns></returns>
-        public List<Customer> Retrieve()//Same name diferent signature. Method overload because it perform similar functionalities and returns same type results than non overload method.
-        {
+                //    return new Customer();
+                //}
 
-            return new List<Customer>();
-        }
+                ///<summary>
+                ///Overload the Retrieve method for retreive informations for multiple customers
+                ///</summary>
+                ///<returns></returns>
+                //public List<Customer> Retrieve()//Same name diferent signature. Method overload because it perform similar functionalities and returns same type results than non overload method.
+                //{
 
-        ///<summary>
-        ///Save or add a new customer to the DB
-        ///</summary>
-        ///<returns></returns>
-        public bool Save()
-        {
+                //    return new List<Customer>();
+                //}
 
-            return true;
-        }
+                ///<summary>
+                ///Save or add a new customer to the DB
+                ///</summary>
+                ///<returns></returns>
+                //public bool Save()
+                //{
+
+                //    return true;
+                //}
     }
 
     
