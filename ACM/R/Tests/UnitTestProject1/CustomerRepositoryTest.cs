@@ -20,9 +20,9 @@ namespace ACM.BLL.Test
             //3. Set the expected outcome
             var expectedCustomer = new Customer(1)
             {
-                EmailAddress = "dnewsson@dsign.com",
-                FirstName = "David",
-                LastName = "Newsson",
+                EmailAddress = "jsgd@jsgd.ca",
+                FirstName = "Jose",
+                LastName = "Gutierrez"
             };
             //--Act: Perform the test operations
             var actualCostumer = customerRepository.Retrieve(1);

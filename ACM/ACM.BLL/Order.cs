@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BLL
 {
-    class Order
+    public class Order
     {
 
         public int OrderId { get; private set; }
@@ -48,27 +48,28 @@ namespace ACM.BLL
             return isValid;
         }
 
-        ///<summary>
-        ///Retrieve informations for a specific product
-        ///</summary>
-        ///<returns></returns>
-        public Order Retrieve(int orderID)
-        {
-            return new Order();
-        }
-        public List<Order> Retrieve()
-        {
-            return new List<Order>();
-        }
+        //MOVED TO THE REPOSITORY
+        /////<summary>
+        /////Retrieve informations for a specific product
+        /////</summary>
+        /////<returns></returns>
+        //public Order Retrieve(int orderID)
+        //{
+        //    return new Order();
+        //}
+        //public List<Order> Retrieve()
+        //{
+        //    return new List<Order>();
+        //}
 
-        ///<summary>
-        ///Save or add a new product to the DB
-        ///</summary>
-        ///<returns></returns>
-        public bool Save()
-        {
+        /////<summary>
+        /////Save or add a new product to the DB
+        /////</summary>
+        /////<returns></returns>
+        //public bool Save()
+        //{
 
-            return true;
-        }
+        //    return true;
+        //}
     }
 }

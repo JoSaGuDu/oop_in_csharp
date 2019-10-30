@@ -19,9 +19,9 @@ namespace ACM.BLL
             //Temporary customer to work  with
             if (customerID == 1)
             {
-                customer.EmailAddress = "dnewsson@dsign.com";
-                customer.FirstName = "David";
-                customer.LastName = "Newsson";
+                customer.EmailAddress = "jsgd@jsgd.ca";
+                customer.FirstName = "Jose";
+                customer.LastName = "Gutierrez";
 
             }
 
