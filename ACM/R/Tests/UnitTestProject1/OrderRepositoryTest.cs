@@ -22,9 +22,11 @@ namespace ACM.BLL.Test
             };
 
             //--Act: Perform the test operations
-            var actualOrderRepository = orderRepository.Retrieve(1);
+            var actualOrder = orderRepository.Retrieve(1);
 
-            //--Assert
+            //--Assert: Test the Outcome
+            Assert.AreEqual(expectedOrder.Customer, actualOrder.Customer);
+            Assert.AreEqual(expectedOrder.OrderDate, actualOrder.OrderDate);
         }
   
     }
