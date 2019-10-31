@@ -12,9 +12,9 @@ namespace ACM.BLL
         {
 
         }
-        public Address(int addressID)
-        {
-            AddressID = addressID;
+        public Address(int addressId)
+        { 
+            AddressID = addressId;
         }
         public int AddressID { get; private set; }
         public string StreetLine1 { get; set; }
@@ -23,7 +23,7 @@ namespace ACM.BLL
         public string State { get; set; }
         public string PostalCode { get; set; }
         public string Country { get; set; }
-        public string AddresType { get; set; }
+        public int Type { get; set; }
 
         /// <summary>
         /// Validates the addres data
