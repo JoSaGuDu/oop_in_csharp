@@ -34,7 +34,7 @@ namespace ACM.BLL
         ///<summary>
         ///Retrieve all addresses for a coustumer
         ///</summary>
-        public IEnumerable<Address>RetrieveByCustomerId(int coutmerId)
+        public IEnumerable<Address>RetrieveByCustomerId(int coutmerId)//IEnumerable is the recomended type to retrive a secuence of data
         {
             var AddressList = new List<Address>();
 

@@ -10,25 +10,28 @@ namespace ACM.BLL
     {
 
         public int OrderId { get; private set; }
+        //Stablish a composition relationship by Id referencing the customer id value and not all the costumer details.
+        // public string Customer { get; set; }//Composition by property that load all the class details.
+        public int CostumerId { get; set; }//Composition by ID
+        public DateTimeOffset? OrderDate { get; set; }// ? is a short for Nullable<DateTimeOffset> => is nullable.
+        //Stablish a composition relationship by Id referencing the shipping addres id value and not allt he costumer details.
+        // public string ShippingAddress { get; set; }//Composition by property that load all the class details.
+        public int ShippingSaddressId { get; set; }//Composition by ID
 
-        public string Customer { get; set; }
-    
-        public DateTimeOffset? OrderDate { get; set; }
-
-        public List<Product> OrderItems { get; set; }
+        public List<Product> OrderItems { get; set; }//Composition by property reference 
        
         public decimal? CurrentPrice { get; set; }
 
         //Constructor
-        public Order()
+        public Order(): this(0)
         {
 
         }
 
         public Order(int ordetId)
         {
-
             OrderId = ordetId;
+            OrderItems = new List<Product>();
 
         }
 
@@ -43,7 +46,7 @@ namespace ACM.BLL
         {
             var isValid = true;
 
-            if (string.IsNullOrWhiteSpace(Customer)) isValid = false;
+            //if (string.IsNullOrWhiteSpace(CostumerID)) isValid = false;
             if (OrderDate == null) isValid = false;
             return isValid;
         }
